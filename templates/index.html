@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Rifa do Theo | WTT</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="hero">
+    <div class="ball"></div>
+    <div class="hero-content">
+    <h1 class="hero-title">Rifa do Theo</h1>
+
+    <p class="hero-event">
+        WTT – Etapa do Circuito Mundial
+    </p>
+
+    <p class="hero-location">
+        Buenos Aires & Assunção
+    </p>
+    </div>
+</header>
+
+<section class="info">
+    <div>💰 <strong>R$ 20,00</strong></div>
+    <div>📅 <strong>02/03/2026</strong></div>
+    <div>💳 <strong>PIX (CNPJ) 60.610.408/0001-07</strong></div>
+</section>
+
+<section class="formulario">
+    <input id="nome" placeholder="Nome completo">
+    <input id="cpf" placeholder="CPF (somente números)">
+    <input id="celular" placeholder="Celular (somente números)">
+</section>
+
+<!-- 🔥 RESUMO + BOTÃO (POSIÇÃO CORRETA) -->
+<section class="checkout">
+    <p>
+        🎟 Números selecionados:
+        <strong id="qtdNumeros">0</strong>
+    </p>
+    <p>
+        💵 Total a pagar:
+        <strong id="valorTotal">R$ 0,00</strong>
+    </p>
+    <button onclick="confirmar()">Confirmar e enviar comprovante</button>
+</section>
+
+<section class="numeros-grid">
+    {% for n in numeros %}
+        {% if n.reservado == 0 %}
+            <div class="numero" onclick="toggleNumero({{ n.numero }}, this)">
+                {{ n.numero }}
+            </div>
+        {% else %}
+            <div class="numero reservado">
+                {{ n.numero }}<br>
+                <small>{{ n.nome }}</small>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

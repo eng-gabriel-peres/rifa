@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #0f3d2e, #061f17);
+    color: #ffffff;
+    text-align: center;
+}
+
+/* HERO / TÍTULO */
+.hero {
+  position: relative;
+  height: 260px;
+  background: linear-gradient(180deg, #0b3d2e, #05281e);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  z-index: 2;
+  color: #ffffff;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.title {
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* 🏓 BOLINHA ANIMADA */
+.ball {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: rally 2.5s ease-in-out infinite;
+}
+
+@keyframes rally {
+    0% { left: -20px; top: 20px; }
+    25% { left: 90%; top: 40px; }
+    50% { left: 40%; top: 70px; }
+    75% { left: 90%; top: 100px; }
+    100% { left: -20px; top: 20px; }
+}
+
+.subtitle {
+    opacity: 0.85;
+}
+
+/* INFO */
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.info div {
+    background: rgba(255,255,255,0.08);
+    padding: 10px 16px;
+    border-radius: 10px;
+}
+
+/* FORM */
+.formulario input {
+    display: block;
+    margin: 12px auto;
+    padding: 12px;
+    width: 280px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+
+/* CHECKOUT */
+.checkout {
+    margin: 25px 0;
+}
+
+.checkout p {
+    margin: 6px 0;
+    font-size: 18px;
+}
+
+.checkout button {
+    margin-top: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ff8c00, #ffb347);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.checkout button:hover {
+    transform: scale(1.05);
+}
+
+/* GRID */
+.numeros-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    max-width: 650px;
+    margin: 30px auto 60px;
+}
+
+.numero {
+    background: #1f7a53;
+    padding: 14px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.numero:hover {
+    background: #2ecc71;
+    transform: scale(1.08);
+}
+
+.numero.ativo {
+    background: #ff8c00;
+    color: #000;
+    transform: scale(1.12);
+}
+
+.numero.reservado {
+    background: #555;
+    cursor: not-allowed;
+    font-size: 12px;
+}
